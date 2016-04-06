@@ -9,11 +9,9 @@
 (defc error nil)
 (defc loading [])
 
-(defc= random-number (get state :random))
-
 (def get-state
   (mkremote 'api-execute-test.api/get-state state error loading))
 
 (defn init []
   (get-state)
-  (js/setInterval get-state 1000))
+  (get-state))
